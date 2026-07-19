@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0F0F13">
+    <title>Marketplace | AutoNation</title>
+    <link rel="icon" href="data:,">
+    <meta name="description" content="Shop 100% genuine spare parts and premium automotive components in Nairobi. Engine, steering, suspension, electrical and HVAC parts with WhatsApp ordering.">
+
+    <link rel="canonical" href="https://autonation.co.ke/marketplace.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://autonation.co.ke/marketplace.html">
+    <meta property="og:title" content="Marketplace | AutoNation">
+    <meta property="og:description" content="Shop 100% genuine spare parts and premium automotive accessories in Nairobi.">
+    <meta property="og:image" content="https://autonation.co.ke/assets/images/hero-diagnostic-1-optimized.webp">
+    <meta property="og:locale" content="en_KE">
+    <meta property="og:site_name" content="AutoNation">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marketplace | AutoNation">
+    <meta name="twitter:description" content="Shop 100% genuine spare parts and premium automotive accessories in Nairobi.">
+    <meta name="twitter:image" content="https://autonation.co.ke/assets/images/hero-diagnostic-1-optimized.webp">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoPartsStore",
+        "name": "AutoNation Marketplace",
+        "url": "https://autonation.co.ke/marketplace.html",
+        "telephone": "+254797945010",
+        "description": "Shop 100% genuine spare parts and premium automotive accessories in Nairobi.",
+        "address": { "@type": "PostalAddress", "streetAddress": "Nation Builders Rd, Dagoretti Corner", "addressLocality": "Nairobi", "addressCountry": "KE" }
+    }
+    </script>
+
+    <style>
+        :root { color-scheme: dark; background: #0F0F13; }
+        html, body { margin: 0; background: #0F0F13; color: #F5F5F7; }
+        [data-theme="light"] { color-scheme: light; background: #F5F5F7; }
+        [data-theme="light"] body { background: #F5F5F7; color: #1D1D1F; }
+    </style>
+    <script>document.documentElement.classList.add('js');</script>
+    <script>
+        (() => {
+            try {
+                const savedTheme = localStorage.getItem('auto-nation-theme');
+                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            } catch (error) {}
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://thesvg.org">
+    <link rel="dns-prefetch" href="https://wa.me">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@700&display=swap" rel="stylesheet">
+    </noscript>
+    <script>
+        if (location.hostname === 'autonation.co.ke' || location.hostname === 'www.autonation.co.ke') {
+            const analyticsScript = document.createElement('script');
+            analyticsScript.defer = true;
+            analyticsScript.dataset.domain = 'autonation.co.ke';
+            analyticsScript.src = 'https://plausible.io/js/script.js';
+            document.head.appendChild(analyticsScript);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-link">Skip to Content</a>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254797945010" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i> Chat with us
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <a href="/" aria-label="Home" class="logo-text">auto<span class="text-accent">N</span>ation</a>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="services.html#engine">Engine Repair</a>
+                    <a href="services.html#brakes">Brake Repair</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="marketplace.html" class="active">Marketplace <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#parts">Spare Parts</a>
+                    <a href="#accessories">Accessories</a>
+                    <a href="#electricals">Electricals</a>
+                </div>
+            </li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="theme-toggle btn-icon" id="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-sun"></i>
+            </button>
+            <a href="https://wa.me/254797945010" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> Chat with Us
+            </a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+    <!-- Page Header -->
+    <header class="hero"
+        style="height: 40vh; background-image: url('assets/images/hero-car-2.webp');" role="banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content text-center" style="padding-top: 80px; margin: 0 auto;">
+            <h1 class="slide-in-right">Genuine <span class="text-accent">Parts Shop</span></h1>
+            <p class="hero-description fade-in mx-auto">Shop 100% genuine spare parts and premium accessories.</p>
+        </div>
+    </header>
+
+    <section class="services-section section-reveal">
+        <div class="container">
+            <h2 class="sr-only">Featured Parts</h2>
+            <div class="services-grid">
+
+                <!-- Product 1 -->
+                <div id="parts" class="service-card glass-panel stagger-item text-center">
+                    <img src="assets/images/part-synthetic-oil.webp"
+                        alt="Thermostat Housing" class="rounded-image"
+                        style="margin-bottom: 1.5rem; height: 200px; object-fit: cover;" loading="lazy" width="400" height="533">
+                    <h3>Thermostat Housing</h3>
+                    <p style="margin-bottom: 1.5rem;">Keeps your engine operating at the proper temperature for reliable everyday driving. Built with corrosion-resistant materials and engineered for a direct replacement fit.</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Precision Engineered</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Corrosion Resistant</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.75rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> OE-Compatible Fit</p>
+                    <div class="service-footer" style="justify-content: space-between;">
+                        <a href="https://wa.me/254797945010?text=I'd like to buy Thermostat Housing"
+                            class="btn btn-primary" style="padding: 0.5rem 1rem;"><i class="fab fa-whatsapp"></i>
+                            Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div id="parts-2" class="service-card glass-panel stagger-item text-center">
+                    <img src="assets/images/part-brake-pads.webp"
+                        alt="Turbocharger" class="rounded-image"
+                        style="margin-bottom: 1.5rem; height: 200px; object-fit: cover;" loading="lazy" width="400" height="225">
+                    <h3>Turbocharger</h3>
+                    <p style="margin-bottom: 1.5rem;">Maintains consistent air induction to support reliable engine performance under normal driving conditions. Precision-balanced internals contribute to dependable long-term operation.</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Premium Quality</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Quality Tested</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.75rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Long Service Life</p>
+                    <div class="service-footer" style="justify-content: space-between;">
+                        <a href="https://wa.me/254797945010?text=I'd like to buy Turbocharger"
+                            class="btn btn-primary" style="padding: 0.5rem 1rem;"><i class="fab fa-whatsapp"></i>
+                            Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div id="accessories" class="service-card glass-panel stagger-item text-center">
+                    <img src="assets/images/part-wiper-blades.webp"
+                        alt="Stabilizer Bar" class="rounded-image"
+                        style="margin-bottom: 1.5rem; height: 200px; object-fit: cover;" loading="lazy" width="400" height="533">
+                    <h3>Stabilizer Bar</h3>
+                    <p style="margin-bottom: 1.5rem;">Reduces body movement during turns for more controlled handling and passenger comfort. Constructed from high-strength materials for reliable long-term service.</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Durable Construction</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Professional Grade</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.75rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Built to Last</p>
+                    <div class="service-footer" style="justify-content: space-between;">
+                        <a href="https://wa.me/254797945010?text=I'd like to buy Stabilizer Bar" class="btn btn-primary"
+                            style="padding: 0.5rem 1rem;"><i class="fab fa-whatsapp"></i> Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div id="parts-3" class="service-card glass-panel stagger-item text-center">
+                    <img src="assets/images/part-oil-filter.webp"
+                        alt="Exhaust Crossover Pipe" class="rounded-image"
+                        style="margin-bottom: 1.5rem; height: 200px; object-fit: cover;" loading="lazy" width="400" height="711">
+                    <h3>Exhaust Crossover Pipe</h3>
+                    <p style="margin-bottom: 1.5rem;">Balances exhaust flow between engine banks to support consistent performance. Built from durable materials that resist corrosion for reliable operation over time.</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Precision Engineered</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Corrosion Resistant</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.75rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Heat Resistant</p>
+                    <div class="service-footer" style="justify-content: space-between;">
+                        <a href="https://wa.me/254797945010?text=I'd like to buy Exhaust Crossover Pipe"
+                            class="btn btn-primary" style="padding: 0.5rem 1rem;"><i class="fab fa-whatsapp"></i>
+                            Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div id="parts-4" class="service-card glass-panel stagger-item text-center">
+                    <img src="assets/images/part-air-filter.webp"
+                        alt="Exhaust Crossover Pipe (Rear)" class="rounded-image"
+                        style="margin-bottom: 1.5rem; height: 200px; object-fit: cover;" loading="lazy" width="400" height="711">
+                    <h3>Exhaust Crossover Pipe (Rear)</h3>
+                    <p style="margin-bottom: 1.5rem;">Restores proper exhaust routing to help your engine breathe freely. Engineered for reliable performance and long service life in everyday driving conditions.</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Premium Quality</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> OE-Compatible Fit</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.75rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Reliable Performance</p>
+                    <div class="service-footer" style="justify-content: space-between;">
+                        <a href="https://wa.me/254797945010?text=I'd like to buy Exhaust Crossover Pipe (Rear)"
+                            class="btn btn-primary" style="padding: 0.5rem 1rem;"><i class="fab fa-whatsapp"></i>
+                            Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div id="parts-5" class="service-card glass-panel stagger-item text-center">
+                    <img src="assets/images/part-cabin-filter.webp"
+                        alt="Air Pressure Pump" class="rounded-image"
+                        style="margin-bottom: 1.5rem; height: 200px; object-fit: cover;" loading="lazy" width="400" height="533">
+                    <h3>Air Pressure Pump</h3>
+                    <p style="margin-bottom: 1.5rem;">Delivers consistent air output for proper engine operation and emission control. Designed to provide reliable service across a range of driving conditions.</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Quality Tested</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Reliable Performance</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.75rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Long Service Life</p>
+                    <div class="service-footer" style="justify-content: space-between;">
+                        <a href="https://wa.me/254797945010?text=I'd like to buy Air Pressure Pump"
+                            class="btn btn-primary" style="padding: 0.5rem 1rem;"><i class="fab fa-whatsapp"></i>
+                            Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div id="parts-6" class="service-card glass-panel stagger-item text-center">
+                    <img src="assets/images/part-spark-plugs.webp"
+                        alt="Air Suspension Pump" class="rounded-image"
+                        style="margin-bottom: 1.5rem; height: 200px; object-fit: cover;" loading="lazy" width="400" height="533">
+                    <h3>Air Suspension Pump</h3>
+                    <p style="margin-bottom: 1.5rem;">Your vehicle stays level and composed under varying loads. Engineered for dependable ride height adjustment and comfort in normal driving conditions.</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Durable Construction</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Professional Grade</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.75rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Precision Engineered</p>
+                    <div class="service-footer" style="justify-content: space-between;">
+                        <a href="https://wa.me/254797945010?text=I'd like to buy Air Suspension Pump"
+                            class="btn btn-primary" style="padding: 0.5rem 1rem;"><i class="fab fa-whatsapp"></i>
+                            Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+            <div id="electricals" class="service-card glass-panel stagger-item text-center">
+                    <img src="assets/images/part-led-bulbs.webp"
+                        alt="Harman Kardon Premium Audio Amplifier" class="rounded-image"
+                        style="margin-bottom: 1.5rem; height: 200px; object-fit: cover;" loading="lazy" width="400" height="533">
+                    <h3>Harman Kardon Premium Audio Amplifier</h3>
+                    <p style="margin-bottom: 1.5rem;">Premium OEM-style car audio amplifier built for clear, balanced cabin sound with rich bass, crisp treble, and immersive surround performance in compatible vehicle sound systems.</p>
+                    <div class="service-footer" style="justify-content: space-between;">
+                        <a href="https://wa.me/254797945010?text=I'd like to buy Harman Kardon Premium Audio Amplifier"
+                            class="btn btn-primary" style="padding: 0.5rem 1rem;"><i class="fab fa-whatsapp"></i>
+                            Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div id="parts-8" class="service-card glass-panel stagger-item text-center">
+                    <img src="assets/images/part-brake-fluid.webp"
+                        alt="AC Compressor" class="rounded-image"
+                        style="margin-bottom: 1.5rem; height: 200px; object-fit: cover;" loading="lazy" width="400" height="533">
+                    <h3>AC Compressor</h3>
+                    <p style="margin-bottom: 1.5rem;">Supports consistent cabin cooling for comfortable driving in warm climates. Built to deliver reliable climate control performance under normal operating conditions.</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Premium Quality</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Reliable Performance</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.75rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Long Service Life</p>
+                    <div class="service-footer" style="justify-content: space-between;">
+                        <a href="https://wa.me/254797945010?text=I'd like to buy AC Compressor"
+                            class="btn btn-primary" style="padding: 0.5rem 1rem;"><i class="fab fa-whatsapp"></i>
+                            Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div id="parts-9" class="service-card glass-panel stagger-item text-center">
+                    <img src="assets/images/part-battery.webp"
+                        alt="Turbocharger Assembly" class="rounded-image"
+                        style="margin-bottom: 1.5rem; height: 200px; object-fit: cover;" loading="lazy" width="400" height="711">
+                    <h3>Turbocharger Assembly</h3>
+                    <p style="margin-bottom: 1.5rem;">Built for smooth airflow and consistent everyday engine performance. Quality materials and precision assembly contribute to sustained reliability over the long term.</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Precision Engineered</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Quality Tested</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.75rem;text-align:left;"><i class="fas fa-check-circle text-accent" style="width:14px;margin-right:0.5rem;"></i> Durable Construction</p>
+                    <div class="service-footer" style="justify-content: space-between;">
+                        <a href="https://wa.me/254797945010?text=I'd like to buy Turbocharger Assembly"
+                            class="btn btn-primary" style="padding: 0.5rem 1rem;"><i class="fab fa-whatsapp"></i>
+                            Order Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section id="categories" class="categories-section section-reveal">
+        <div class="container text-center">
+            <span class="sub-heading text-accent">Pick Your System</span>
+            <h2 class="section-reveal line-wipe">What Needs Attention?</h2>
+            <p>Every component tells a story. Start yours by exploring a system below.</p>
+            <div class="categories-grid">
+                <a href="#parts" class="category-card stagger-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Engine Components</h3>
+                    <p>The heart of performance. Precision internals that define your drive.</p>
+                </a>
+                <a href="#parts-2" class="category-card stagger-item">
+                    <i class="fas fa-car-crash"></i>
+                    <h3>Steering & Suspension</h3>
+                    <p>Confidence on every curve. Engineered for control and comfort.</p>
+                </a>
+                <a href="#parts-6" class="category-card stagger-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Electrical & Starting</h3>
+                    <p>Where every journey begins. Reliable power, every time.</p>
+                </a>
+                <a href="#electricals" class="category-card stagger-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Lighting</h3>
+                    <p>See and be seen. Precision optics for the road ahead.</p>
+                </a>
+                <a href="#parts-5" class="category-card stagger-item">
+                    <i class="fas fa-fan"></i>
+                    <h3>HVAC</h3>
+                    <p>Your cabin, your climate. Comfort in every season.</p>
+                </a>
+                <a href="#parts-9" class="category-card stagger-item">
+                    <i class="fas fa-tools"></i>
+                    <h3>Drivetrain & More</h3>
+                    <p>The missing piece? We'll find it. Rare parts, sourced globally.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Buy Genuine Parts -->
+    <section id="why-genuine" class="why-us-section section-reveal dark-bg">
+        <div class="container">
+            <div class="split-layout">
+                <div class="split-content">
+                    <span class="sub-heading text-accent">Quality Assurance</span>
+                    <h2 class="section-reveal line-wipe">Why Buy Genuine Parts?</h2>
+                    <p>Using authentic components protects your vehicle's performance, safety, and resale value. Counterfeit parts can cause serious damage.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle text-accent"></i> Perfect fit and compatibility guaranteed</li>
+                        <li><i class="fas fa-check-circle text-accent"></i> Manufacturer-grade durability and performance</li>
+                        <li><i class="fas fa-check-circle text-accent"></i> Warranty protection on all purchases</li>
+                        <li><i class="fas fa-check-circle text-accent"></i> Avoid costly repairs from substandard parts</li>
+                    </ul>
+                    <a href="https://wa.me/254797945010" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"></i> Ask About Parts</a>
+                </div>
+                <div class="split-image">
+                    <div class="hover-zoom rounded-image shadow-lg" style="border-radius: var(--border-radius-lg);">
+                        <img src="assets/images/part-synthetic-oil.webp" alt="Quality auto parts" loading="lazy" class="fill-image" width="400" height="533">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compatibility Information -->
+    <section id="compatibility" class="compatibility-section section-reveal">
+        <div class="cta-bg" style="background-image: url('assets/images/hero-inspection-1.webp');"></div>
+        <div class="container text-center">
+            <span class="sub-heading text-accent">Compatibility</span>
+            <h2 class="section-reveal line-wipe">Parts for All Major Brands</h2>
+            <p>We stock components compatible with vehicles from all leading manufacturers.</p>
+            <div class="compatibility-grid">
+                <div class="compatibility-item stagger-item"><img src="https://cdn.simpleicons.org/toyota" alt="Toyota" class="brand-icon"> <span>Toyota</span></div>
+                <div class="compatibility-item stagger-item"><img src="https://cdn.simpleicons.org/nissan" alt="Nissan" class="brand-icon"> <span>Nissan</span></div>
+                <div class="compatibility-item stagger-item"><img src="assets/images/brands/mazda.svg" alt="Mazda" class="brand-icon brand-icon--silver"> <span>Mazda</span></div>
+                <div class="compatibility-item stagger-item"><img src="https://cdn.simpleicons.org/subaru" alt="Subaru" class="brand-icon"> <span>Subaru</span></div>
+                <div class="compatibility-item stagger-item"><img src="assets/images/brands/mercedes-benz.svg" alt="Mercedes-Benz" class="brand-icon"> <span>Mercedes-Benz</span></div>
+                <div class="compatibility-item stagger-item"><img src="https://cdn.simpleicons.org/bmw" alt="BMW" class="brand-icon"> <span>BMW</span></div>
+                <div class="compatibility-item stagger-item"><img src="assets/images/brands/volkswagen-light.svg" alt="Volkswagen" class="brand-icon brand-icon--light">
+                <img src="assets/images/brands/volkswagen.svg" alt="Volkswagen" class="brand-icon brand-icon--dark"> <span>Volkswagen</span></div>
+                <div class="compatibility-item stagger-item"><i class="fas fa-plus-circle"></i> <span>Plus Many More</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section id="reviews" class="reviews-section section-reveal">
+        <div class="container text-center">
+            <span class="sub-heading text-accent">Reviews</span>
+            <h2 class="section-reveal line-wipe">What Our Customers Say</h2>
+            <p>Real reviews from verified buyers at AutoNation Marketplace.</p>
+            <div class="reviews-grid">
+                <div class="review-card stagger-item">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Genuine oil at a great price. Delivered same day. Highly recommend."</p>
+                    <h3>Peter Mwangi</h3>
+                    <span class="verified"><i class="fas fa-check-circle"></i> Verified Purchase</span>
+                </div>
+                <div class="review-card stagger-item">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"The brake pads I ordered were exact fit for my Subaru. Excellent quality."</p>
+                    <h3>Grace Wanjiku</h3>
+                    <span class="verified"><i class="fas fa-check-circle"></i> Verified Purchase</span>
+                </div>
+                <div class="review-card stagger-item">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Quick WhatsApp response and the wiper blades work perfectly in heavy rain."</p>
+                    <h3>Kevin Ochieng</h3>
+                    <span class="verified"><i class="fas fa-check-circle"></i> Verified Purchase</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section section-reveal">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading text-accent">FAQ</span>
+                <h2 class="section-reveal line-wipe">Frequently Asked Questions</h2>
+                <p>Everything you need to know about our marketplace.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item stagger-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="market-faq-answer-1">
+                        <span>How do I place an order?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="market-faq-answer-1">Click "Buy Now" on any product to start a WhatsApp order. Send us the product details and we'll confirm availability and delivery.</div>
+                </div>
+                <div class="faq-item stagger-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="market-faq-answer-2">
+                        <span>Are your parts genuine?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="market-faq-answer-2">Yes. All parts are 100% genuine OEM or high-quality aftermarket from trusted suppliers.</div>
+                </div>
+                <div class="faq-item stagger-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="market-faq-answer-3">
+                        <span>Do you offer delivery?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="market-faq-answer-3">Yes, we offer delivery within Nairobi. Contact us via WhatsApp for delivery fees and timelines.</div>
+                </div>
+                <div class="faq-item stagger-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="market-faq-answer-4">
+                        <span>What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="market-faq-answer-4">We accept M-Pesa, bank transfers, and cash on pickup.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Need Help CTA -->
+    <section class="cta-section section-reveal">
+        <div class="cta-bg" style="background-image: url('assets/images/hero-car-2.webp');"></div>
+        <div class="container text-center">
+            <h2 class="slide-in-left">Need Help Finding a Part?</h2>
+            <p>Can't find what you're looking for? Send us a message and we'll source it for you.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/254797945010" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Chat with Us</a>
+            <a href="tel:+254797945010" class="btn btn-outline"><i class="fas fa-phone"></i> Call Us</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer with Map -->
+    <footer id="about" class="footer dark-bg section-reveal" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <h3>auto<span class="text-accent">N</span>ation</h3>
+                    </div>
+                    <p class="mt-2 text-gray">Precision in Every Repair. Confidence in Every Drive.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-location-dot"></i> Nation Builders Rd, Dagoretti Corner, Nairobi, Kenya</li>
+                        <li><i class="fas fa-phone text-accent"></i> <span><a href="tel:+254797945010">0797945010</a> / <a href="tel:+254727699713">0727699713</a></span></li>
+                        <li><i class="fab fa-google"></i> <a href="mailto:Antonymunyao07@gmail.com">Antonymunyao07@gmail.com</a></li>
+                        <li class="mt-2"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254797945010" target="_blank" rel="noopener noreferrer" class="whatsapp-link">WhatsApp Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Operating Hours & Location</h4>
+                    <ul class="hours-list">
+                        <li><span>Mon - Fri:</span> <span>8:00 AM - 5:00 PM</span></li>
+                        <li><span>Saturday:</span> <span>8:00 AM - 1:00 PM</span></li>
+                        <li><span>Sunday:</span> <span class="text-danger">Closed</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Professional Wide Google Map -->
+            <div class="map-container">
+                <iframe title="AutoNation location map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000!2d36.7542386!3d-1.2982621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b89eec6193d%3A0x6fa7ae890b171ad5!2sDagoretti+Corner!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <a href="https://maps.google.com/?q=Dagoretti+Corner,Nairobi" target="_blank" rel="noopener noreferrer" class="map-open-link"><i class="fas fa-location-dot"></i> Open in Google Maps</a>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 AutoNation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="script.js"></script>
+</body>
+
+</html>
