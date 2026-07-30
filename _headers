@@ -1,9 +1,10 @@
 /*
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data: https://thesvg.org https://cdn.simpleicons.org; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://plausible.io; connect-src 'self' https://plausible.io; frame-src https://www.google.com; form-action 'self' https://wa.me; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data: https://thesvg.org https://cdn.simpleicons.org; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://plausible.io https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://plausible.io; frame-src https://www.google.com; form-action 'self' https://wa.me; upgrade-insecure-requests
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   X-Frame-Options: SAMEORIGIN
+  Strict-Transport-Security: max-age=31536000
 
 /
   Cache-Control: no-cache
@@ -20,8 +21,21 @@
 /assets/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
 
+/favicon.ico
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/site.webmanifest
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
 /robots.txt
   Cache-Control: public, max-age=3600
 
 /sitemap.xml
   Cache-Control: public, max-age=3600
+
+# Prevent Cloudflare preview hostnames from competing with the canonical domain.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex

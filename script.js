@@ -3,6 +3,24 @@
  * Handles themes, interactivity, animations, and testimonials.
  */
 
+
+
+// Load production analytics once from the shared script instead of duplicating
+// the same loader across every HTML page.
+function initAnalytics() {
+    const productionHosts = new Set(['autonationgarage.com', 'www.autonationgarage.com']);
+    if (!productionHosts.has(window.location.hostname)) return;
+    if (document.querySelector('script[data-domain="autonationgarage.com"]')) return;
+
+    const analyticsScript = document.createElement('script');
+    analyticsScript.defer = true;
+    analyticsScript.dataset.domain = 'autonationgarage.com';
+    analyticsScript.src = 'https://plausible.io/js/script.js';
+    document.head.appendChild(analyticsScript);
+}
+
+initAnalytics();
+
 // 1. THEME MANAGER
 function initTheme() {
     const themeToggleBtn = document.getElementById('theme-toggle');
@@ -21,7 +39,6 @@ function initTheme() {
 
     if (themeToggleBtn) {
         const icon = themeToggleBtn.querySelector('i');
-        const primaryBg = getComputedStyle(htmlElement).getPropertyValue('--primary-bg');
         themeToggleBtn.addEventListener('click', () => {
             themeToggleBtn.classList.add('rotated');
             setTimeout(() => themeToggleBtn.classList.remove('rotated'), 350);
@@ -45,6 +62,12 @@ function initTheme() {
         } else if (icon) {
             icon.className = 'fas fa-moon';
         }
+        themeToggleBtn.setAttribute(
+            'aria-label',
+            htmlElement.getAttribute('data-theme') === 'light'
+                ? 'Switch to dark theme'
+                : 'Switch to light theme'
+        );
     }
 }
 
@@ -52,7 +75,6 @@ initTheme();
 
 document.addEventListener('DOMContentLoaded', () => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const primaryBg = getComputedStyle(document.documentElement).getPropertyValue('--primary-bg');
 
     // 2. Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
@@ -81,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!mobileBtn || !navLinks) return;
         navLinks.classList.remove('is-open');
         mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileBtn.setAttribute('aria-label', 'Open menu');
         if (restoreFocus) mobileBtn.focus();
     }
 
@@ -100,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function openMobileMenu() {
             navLinks.classList.add('is-open');
             mobileBtn.setAttribute('aria-expanded', 'true');
+            mobileBtn.setAttribute('aria-label', 'Close menu');
 
             const firstLink = navLinks.querySelector('a');
             if (firstLink) firstLink.focus();
@@ -414,3 +438,4 @@ function initProcessMarquee() {
         if (total > 1) resetAutoPlay();
     });
 }
+

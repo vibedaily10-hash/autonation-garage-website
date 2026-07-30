@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://autonation.co.ke/sitemap.xml
+Sitemap: https://autonationgarage.com/sitemap.xml
