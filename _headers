@@ -34,8 +34,5 @@
   Cache-Control: public, max-age=3600
 
 # Prevent Cloudflare preview hostnames from competing with the canonical domain.
-https://:project.pages.dev/*
-  X-Robots-Tag: noindex
-
-https://:version.:project.pages.dev/*
+https://:version.:subdomain.workers.dev/*
   X-Robots-Tag: noindex
