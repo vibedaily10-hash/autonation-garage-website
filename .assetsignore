@@ -1,0 +1,10 @@
+.git/
+.github/
+node_modules/
+_safety/
+*.zip
+*.md
+wrangler.jsonc
+package.json
+package-lock.json
+.assetsignore

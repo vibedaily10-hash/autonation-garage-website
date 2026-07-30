@@ -137,11 +137,11 @@
 }
 
 [data-theme="light"] .service-card__bg {
-    background-size: 50% auto;
-    background-position: bottom right;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(1.8) contrast(0.7) sepia(0.7) saturate(2);
-    opacity: 0.22;
+    filter: saturate(0.82) contrast(1.02) brightness(0.92);
+    opacity: 0.58;
     mix-blend-mode: normal;
 }
 
@@ -1378,7 +1378,7 @@ a.logo-text {
     position: relative;
     overflow: hidden;
     background-color: #050508;
-    background-image: url('assets/images/hero-engine-1.jpg');
+    background-image: url('assets/images/hero-engine-1.webp');
     background-size: cover;
     background-position: center;
     background-blend-mode: luminosity;
@@ -1408,6 +1408,116 @@ a.logo-text {
 .brands-section .section-header h2 {
     font-size: 2.5rem;
     color: #f1f1f1;
+}
+
+/* --- Featured Premium Brands: fixed 2 × 2 image grid --- */
+.premium-brands-grid {
+    width: min(100%, 1080px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.premium-brand-tile {
+    position: relative;
+    min-width: 0;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: clamp(14px, 2vw, 22px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #111218;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
+}
+
+.premium-brand-tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, rgba(3, 4, 8, 0.02) 28%, rgba(3, 4, 8, 0.88) 100%),
+        linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 38%);
+}
+
+.premium-brand-tile__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.9) contrast(1.04);
+    transform: scale(1.01);
+    animation: premiumBrandZoom 14s ease-in-out var(--zoom-delay, 0s) infinite alternate;
+    will-change: transform;
+}
+
+.premium-brand-tile__image--land-rover {
+    object-position: center 58%;
+}
+
+.premium-brand-tile__image--mercedes {
+    object-position: center 55%;
+}
+
+.premium-brand-tile__image--bmw {
+    object-position: center 48%;
+}
+
+.premium-brand-tile__image--toyota {
+    object-position: center 54%;
+}
+
+.premium-brand-tile__overlay {
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 2;
+    padding: clamp(0.75rem, 2vw, 1.35rem);
+    color: #fff;
+}
+
+.premium-brand-tile__eyebrow {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: #f1c75b;
+    font-size: clamp(0.52rem, 1.2vw, 0.72rem);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.premium-brand-tile h3 {
+    margin: 0;
+    color: #fff;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-size: clamp(0.9rem, 2.1vw, 1.55rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+.premium-brands-credit {
+    display: block;
+    width: fit-content;
+    margin: 0.85rem auto 0;
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.premium-brands-credit:hover,
+.premium-brands-credit:focus-visible {
+    color: #fff;
+}
+
+@keyframes premiumBrandZoom {
+    from { transform: scale(1.01); }
+    to { transform: scale(1.075); }
 }
 
 /* --- Marquee Track & Edge Fade --- */
@@ -1562,6 +1672,8 @@ a.logo-text {
     .brands-section { padding: 3rem 0; }
     .brands-section .section-header { margin-bottom: 2rem; }
     .brands-section .section-header h2 { font-size: 1.75rem; }
+    .premium-brands-grid { gap: 0.75rem; }
+    .premium-brand-tile { aspect-ratio: 4 / 3; }
     .brand-card { width: 195px; height: 150px; }
     .marquee-content { gap: 2rem; }
     .brand-card__logo { height: 36px; max-width: 85px; }
@@ -1571,6 +1683,10 @@ a.logo-text {
 @media (max-width: 480px) {
     .brands-section { padding: 2.5rem 0; }
     .brands-section .section-header h2 { font-size: 1.35rem; }
+    .premium-brands-grid { gap: 0.6rem; }
+    .premium-brand-tile { border-radius: 12px; }
+    .premium-brand-tile__overlay { padding: 0.65rem; }
+    .premium-brand-tile__eyebrow { letter-spacing: 0.075em; }
     .brand-card { width: 160px; height: 130px; }
     .marquee-content { gap: 1.5rem; }
     .brand-card__logo { height: 30px; max-width: 70px; }
@@ -1634,6 +1750,45 @@ a.logo-text {
     overflow: hidden;
 }
 
+.service-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 340px;
+    isolation: isolate;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        145deg,
+        rgba(15, 15, 19, 0.72) 0%,
+        rgba(15, 15, 19, 0.52) 45%,
+        rgba(15, 15, 19, 0.88) 100%
+    );
+}
+
+[data-theme="light"] .service-card::after {
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.64) 0%,
+        rgba(255, 255, 255, 0.42) 45%,
+        rgba(255, 255, 255, 0.86) 100%
+    );
+}
+
+.service-card > :not(.service-card__bg) {
+    position: relative;
+    z-index: 2;
+}
+
+.service-card.glass-panel::before {
+    z-index: 3;
+}
+
 
 @media (hover: hover) {
     .btn-primary:hover {
@@ -1665,7 +1820,9 @@ a.logo-text {
         transform: scale(1.05);
     }
     .service-card:hover .service-card__bg {
-        opacity: 0.55;
+        opacity: 0.66;
+        filter: saturate(0.96) contrast(1.08);
+        transform: scale(1.04);
     }
     .glass-panel:hover .btn-icon i {
         transform: translateX(4px);
@@ -1758,14 +1915,18 @@ a.logo-text {
 .service-card__bg {
     position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     background-size: cover;
-    background-position: bottom right;
+    background-position: center;
     background-repeat: no-repeat;
-    filter: grayscale(1) blur(1px);
-    opacity: 0.4;
+    filter: saturate(0.86) contrast(1.04);
+    opacity: 0.54;
+    transform: scale(1.01);
     pointer-events: none;
-    transition: opacity 0.35s var(--ease-apple);
+    transition:
+        opacity 0.35s var(--ease-apple),
+        filter 0.35s var(--ease-apple),
+        transform 0.55s var(--ease-apple);
 }
 
 .service-footer {
@@ -1892,7 +2053,7 @@ a.logo-text {
     position: relative;
     overflow: hidden;
     background-color: #050508;
-    background-image: url('assets/images/hero-engine-1.jpg');
+    background-image: url('assets/images/hero-engine-1.webp');
     background-size: cover;
     background-position: center;
     background-blend-mode: luminosity;
@@ -2200,7 +2361,7 @@ a.logo-text {
     padding: 5rem 0;
     position: relative;
     overflow: hidden;
-    background-image: url('assets/images/hero-engine-1.jpg');
+    background-image: url('assets/images/hero-engine-1.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2978,8 +3139,9 @@ html:not([data-theme="light"]) .compatibility-item .brand-icon:not(.brand-icon--
     .section-header h2 { font-size: 1.75rem; }
     .sub-heading { font-size: 0.7rem; }
     .services-grid { grid-template-columns: 1fr; }
+    .service-card { min-height: 320px; }
     .service-card__bg {
-        opacity: 0.35;
+        opacity: 0.5;
     }
     .guarantee-grid,
     .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
@@ -3019,4 +3181,590 @@ html:not([data-theme="light"]) .compatibility-item .brand-icon:not(.brand-icon--
     .section-header { margin-bottom: 1.5rem; }
     .section-header h2 { font-size: 1.5rem; }
     .container { padding: 0 1rem; }
+}
+
+/* =========================================
+   READABILITY SYSTEM — Website-wide
+   Keeps text legible across themes, images,
+   touch devices, and narrow viewports.
+========================================= */
+:root {
+    --font-body-readable: 1rem;
+    --font-supporting-readable: 0.9375rem;
+    --font-label-readable: 0.8125rem;
+    --font-button-readable: 0.9375rem;
+    --photo-text-primary: #FFFFFF;
+    --photo-text-secondary: #ECECF0;
+    --dark-surface-text: #F5F5F7;
+    --dark-surface-muted: #C7C7CE;
+    --dark-surface-bg: #0B0B0F;
+}
+
+body {
+    font-size: var(--font-body-readable);
+}
+
+p,
+li {
+    overflow-wrap: break-word;
+}
+
+.section-header > p,
+.split-content > p,
+.hero-description {
+    line-height: 1.65;
+}
+
+.section-header > p {
+    max-width: 62ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sub-heading {
+    font-size: var(--font-label-readable);
+    line-height: 1.35;
+    letter-spacing: 0.12em;
+}
+
+.badge {
+    font-size: var(--font-label-readable);
+}
+
+/* Stable text contrast over all carousel photographs */
+.slide-overlay-bg,
+[data-theme="light"] .slide-overlay-bg {
+    background:
+        linear-gradient(180deg, rgba(5, 5, 8, 0.24) 0%, rgba(5, 5, 8, 0.58) 100%),
+        radial-gradient(ellipse at center, rgba(5, 5, 8, 0.42) 0%, rgba(5, 5, 8, 0.82) 100%);
+}
+
+.slide-overlay-text,
+[data-theme="light"] .slide-overlay-text {
+    color: var(--photo-text-primary);
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.72);
+}
+
+.slide-overlay-sub,
+[data-theme="light"] .slide-overlay-sub {
+    color: var(--photo-text-secondary);
+    font-size: clamp(var(--font-supporting-readable), 1.15vw, 1.05rem);
+    font-weight: 500;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.78);
+}
+
+.slide-trust span,
+[data-theme="light"] .slide-trust span {
+    color: var(--photo-text-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
+}
+
+.full-banner-section .btn-primary,
+.full-banner-section .btn-outline {
+    font-size: max(var(--font-button-readable), 1rem);
+}
+
+/* Page heroes remain readable regardless of the active theme */
+.hero-description {
+    color: var(--photo-text-primary);
+    opacity: 1;
+    font-weight: 500;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
+}
+
+.hero .text-accent,
+[data-theme="light"] .hero .text-accent {
+    color: #D4AF37 !important;
+}
+
+/* Premium brand captions */
+.premium-brand-tile__overlay {
+    background: linear-gradient(to top, rgba(3, 4, 8, 0.94) 0%, rgba(3, 4, 8, 0.5) 68%, transparent 100%);
+}
+
+.premium-brand-tile__eyebrow {
+    font-size: clamp(0.75rem, 1.2vw, 0.8125rem);
+    line-height: 1.35;
+}
+
+/* Service-card photography is decorative; text always wins */
+.service-card::after {
+    background: linear-gradient(
+        145deg,
+        rgba(10, 10, 14, 0.78) 0%,
+        rgba(10, 10, 14, 0.66) 48%,
+        rgba(10, 10, 14, 0.93) 100%
+    );
+}
+
+.service-card p {
+    color: var(--photo-text-secondary);
+    font-size: var(--font-body-readable);
+    line-height: 1.65;
+    font-weight: 450;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.72);
+}
+
+.service-card .service-footer {
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"] .service-card::after {
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.88) 0%,
+        rgba(255, 255, 255, 0.76) 48%,
+        rgba(255, 255, 255, 0.96) 100%
+    );
+}
+
+[data-theme="light"] .service-card p {
+    color: #29292D;
+    text-shadow: none;
+}
+
+[data-theme="light"] .service-card .service-footer {
+    border-top-color: rgba(29, 29, 31, 0.16);
+}
+
+/* Process and final CTA are intentional dark photo surfaces in both themes */
+[data-theme="light"] .process-section {
+    background: #050508 url('assets/images/hero-engine-1.webp') center / cover no-repeat;
+}
+
+[data-theme="light"] .process-section::before {
+    display: block;
+}
+
+.process-section .section-header h2,
+[data-theme="light"] .process-section .section-header h2,
+.cta-section h2,
+[data-theme="light"] .cta-section h2 {
+    color: var(--dark-surface-text);
+}
+
+.process-section .section-header p,
+[data-theme="light"] .process-section .section-header p,
+.cta-section p,
+[data-theme="light"] .cta-section p {
+    color: var(--dark-surface-muted);
+    opacity: 1;
+}
+
+.process-section .sub-heading,
+.categories-section .sub-heading,
+[data-theme="light"] .process-section .sub-heading,
+[data-theme="light"] .categories-section .sub-heading {
+    color: #D4AF37;
+}
+
+.process-card__title {
+    color: var(--photo-text-primary);
+    font-size: var(--font-supporting-readable);
+    font-weight: 600;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
+}
+
+.cta-section,
+[data-theme="light"] .cta-section {
+    background: var(--dark-surface-bg);
+}
+
+.cta-section .btn-outline,
+[data-theme="light"] .cta-section .btn-outline {
+    color: #F1C75B;
+    border-color: #D4AF37;
+}
+
+[data-theme="light"] .cta-bg {
+    filter: grayscale(1) brightness(0.72) contrast(1.08);
+    opacity: 0.16;
+}
+
+/* Supporting card and accordion copy */
+.testimonial-card .service-meta,
+.guarantee-card p,
+.category-card p,
+.review-card p {
+    font-size: var(--font-supporting-readable);
+    line-height: 1.6;
+}
+
+.faq-answer {
+    font-size: var(--font-body-readable);
+}
+
+/* Marketplace feature details no longer rely on inline tiny text */
+.marketplace-page .product-feature {
+    margin-bottom: 0.25rem;
+    color: var(--text-muted);
+    font-size: var(--font-supporting-readable);
+    line-height: 1.55;
+    text-align: left;
+}
+
+.marketplace-page .product-feature--last {
+    margin-bottom: 0.75rem;
+}
+
+/* Footer stays dark, so its text must not inherit light-theme gray tokens */
+.footer.dark-bg,
+[data-theme="light"] .footer.dark-bg {
+    background: #111827;
+    color: var(--dark-surface-text);
+}
+
+.footer .footer-col h4 {
+    color: var(--dark-surface-text);
+}
+
+.footer .footer-col a,
+.footer .contact-info li,
+.footer .hours-list li,
+.footer .map-open-link,
+.footer .footer-bottom {
+    color: var(--dark-surface-muted);
+    font-size: var(--font-supporting-readable);
+    line-height: 1.55;
+}
+
+.footer .text-gray {
+    color: var(--dark-surface-muted) !important;
+}
+
+.footer .hours-list li {
+    border-bottom-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Long-form pages use a comfortable reading measure */
+.legal-page .container {
+    max-width: 780px;
+}
+
+.legal-page p,
+.legal-page li {
+    font-size: var(--font-body-readable);
+    line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+    .section-header h2 {
+        line-height: 1.2;
+        text-wrap: balance;
+    }
+
+    .service-card {
+        min-height: 330px;
+    }
+
+    .process-card__title,
+    .category-card p,
+    .guarantee-card p,
+    .review-card p {
+        font-size: var(--font-supporting-readable);
+    }
+}
+
+@media (max-width: 480px) {
+    .slide-overlay {
+        gap: 0.5rem;
+    }
+
+    .slide-overlay-text {
+        max-width: 22ch;
+        font-size: clamp(1.2rem, 5.8vw, 1.5rem);
+        line-height: 1.2;
+    }
+
+    .slide-overlay-sub {
+        max-width: 32ch;
+        font-size: var(--font-supporting-readable);
+        line-height: 1.5;
+    }
+
+    .full-banner-section .btn-primary,
+    .full-banner-section .btn-outline {
+        min-height: 46px;
+        padding: 0.8rem 1.1rem;
+        font-size: var(--font-button-readable);
+    }
+
+    .sub-heading,
+    .badge {
+        font-size: var(--font-label-readable);
+    }
+
+    .section-header h2 {
+        font-size: clamp(1.625rem, 7vw, 1.9rem);
+    }
+
+    .section-header > p,
+    .glass-panel p,
+    .testimonial-card p,
+    .faq-answer,
+    .cta-section p {
+        font-size: var(--font-body-readable);
+    }
+}
+
+@media (max-width: 360px) {
+    .slide-overlay-text {
+        font-size: 1.125rem;
+    }
+
+    .slide-overlay-sub {
+        font-size: 0.875rem;
+    }
+
+    .full-banner-section .btn-primary,
+    .full-banner-section .btn-outline {
+        font-size: var(--font-button-readable);
+    }
+}
+
+/* =========================================
+   LIGHT THEME PANELS — Warm surface hierarchy
+   Scoped only to light-mode canvas and cards.
+========================================= */
+[data-theme="light"] {
+    --light-canvas-warm: #F1EFE9;
+    --light-panel-warm: #FBFAF7;
+    --light-panel-raised: #FFFFFF;
+    --light-border-warm: #D4CFC5;
+    --light-heading-strong: #1D1D1F;
+    --light-copy-strong: #4D4D52;
+    --light-panel-shadow: 0 10px 28px rgba(46, 40, 28, 0.08);
+    --light-panel-shadow-hover: 0 16px 36px rgba(46, 40, 28, 0.12);
+}
+
+/* Warm canvas replaces large, glaring white fields */
+[data-theme="light"] .services-section,
+[data-theme="light"] .testimonials-section,
+[data-theme="light"] .faq-section,
+[data-theme="light"] .reviews-section,
+[data-theme="light"] .guarantee-section,
+[data-theme="light"] .compatibility-section,
+[data-theme="light"] .legal-page {
+    background-color: var(--light-canvas-warm);
+}
+
+/* Ivory panels restore separation from their surrounding canvas */
+[data-theme="light"] .glass-panel,
+[data-theme="light"] .testimonial-card,
+[data-theme="light"] .guarantee-card,
+[data-theme="light"] .category-card,
+[data-theme="light"] .review-card,
+[data-theme="light"] .compatibility-item,
+[data-theme="light"] .faq-item {
+    background: var(--light-panel-warm);
+    border-color: var(--light-border-warm);
+    box-shadow: var(--light-panel-shadow);
+}
+
+/* Crisp text hierarchy within light canvas sections */
+[data-theme="light"] .services-section h2,
+[data-theme="light"] .services-section h3,
+[data-theme="light"] .testimonials-section h2,
+[data-theme="light"] .testimonials-section h3,
+[data-theme="light"] .testimonials-section h4,
+[data-theme="light"] .faq-section h2,
+[data-theme="light"] .reviews-section h2,
+[data-theme="light"] .reviews-section h3,
+[data-theme="light"] .guarantee-section h2,
+[data-theme="light"] .guarantee-section h3,
+[data-theme="light"] .compatibility-section h2,
+[data-theme="light"] .legal-page h1,
+[data-theme="light"] .legal-page h2 {
+    color: var(--light-heading-strong);
+}
+
+[data-theme="light"] .services-section .section-header > p,
+[data-theme="light"] .testimonials-section .section-header > p,
+[data-theme="light"] .faq-section .section-header > p,
+[data-theme="light"] .reviews-section > .container > p,
+[data-theme="light"] .guarantee-section > .container > p,
+[data-theme="light"] .compatibility-section > .container > p,
+[data-theme="light"] .testimonial-card p,
+[data-theme="light"] .testimonial-card .service-meta,
+[data-theme="light"] .guarantee-card p,
+[data-theme="light"] .review-card p,
+[data-theme="light"] .category-card p,
+[data-theme="light"] .faq-answer,
+[data-theme="light"] .legal-page p,
+[data-theme="light"] .legal-page li {
+    color: var(--light-copy-strong);
+}
+
+/* Service photos stay visible under a warm, readable veil */
+[data-theme="light"] .service-card {
+    background: var(--light-panel-warm);
+}
+
+[data-theme="light"] .service-card__bg {
+    filter: saturate(0.94) contrast(1.08) brightness(0.88);
+    opacity: 0.72;
+}
+
+[data-theme="light"] .service-card::after {
+    background: linear-gradient(
+        145deg,
+        rgba(251, 250, 247, 0.68) 0%,
+        rgba(251, 250, 247, 0.48) 48%,
+        rgba(251, 250, 247, 0.86) 100%
+    );
+}
+
+[data-theme="light"] .service-card p {
+    color: #29292D;
+}
+
+[data-theme="light"] .service-icon {
+    background: var(--light-panel-raised);
+    border-color: var(--light-border-warm);
+    box-shadow: 0 5px 16px rgba(46, 40, 28, 0.08);
+}
+
+[data-theme="light"] .service-footer {
+    border-top-color: rgba(77, 77, 82, 0.22);
+}
+
+/* Keep the compatibility photograph subtle instead of bleached */
+[data-theme="light"] .compatibility-section .cta-bg {
+    filter: grayscale(0.82) sepia(0.16) brightness(0.88) contrast(0.9);
+    opacity: 0.1;
+}
+
+/* Refined elevation remains visible during pointer interaction */
+@media (hover: hover) {
+    [data-theme="light"] .glass-panel:hover,
+    [data-theme="light"] .testimonial-card:hover,
+    [data-theme="light"] .guarantee-card:hover,
+    [data-theme="light"] .category-card:hover,
+    [data-theme="light"] .review-card:hover,
+    [data-theme="light"] .compatibility-item:hover,
+    [data-theme="light"] .faq-item:hover {
+        border-color: #C8BEA9;
+        box-shadow: var(--light-panel-shadow-hover);
+    }
+}
+
+/* =========================================
+   LIGHT THEME — Services typography
+   Limited to the Services page and the
+   homepage Complete Auto Care section.
+========================================= */
+
+/* Services-page photo hero */
+[data-theme="light"] .services-page .hero .hero-content h1 {
+    color: #FFFFFF;
+    font-size: clamp(3.25rem, 5.2vw, 5.25rem);
+    font-weight: 800;
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    margin-bottom: 1.25rem;
+    text-wrap: balance;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="light"] .services-page .hero .hero-description {
+    color: #FFFFFF;
+    max-width: 44ch;
+    font-size: clamp(1.125rem, 1.4vw, 1.375rem);
+    font-weight: 650;
+    line-height: 1.5;
+    letter-spacing: 0.005em;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
+}
+
+/* Homepage services introduction */
+[data-theme="light"] .home-page .services-section .section-header {
+    max-width: 760px;
+    margin-bottom: 3rem;
+}
+
+[data-theme="light"] .home-page .services-section .sub-heading {
+    color: #705600;
+    font-size: clamp(0.875rem, 0.95vw, 0.9375rem);
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.875rem;
+}
+
+[data-theme="light"] .home-page .services-section .section-header h2 {
+    color: #161618;
+    font-size: clamp(2.125rem, 3.4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+    margin-bottom: 1rem;
+    text-wrap: balance;
+}
+
+[data-theme="light"] .home-page .services-section .section-header > p {
+    color: #343438;
+    max-width: 60ch;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.65;
+}
+
+/* Service-card copy on both approved pages */
+[data-theme="light"] .home-page .services-section .service-card h3,
+[data-theme="light"] .services-page .services-section .service-card h3 {
+    color: #161618;
+    font-size: 1.375rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.875rem;
+}
+
+[data-theme="light"] .home-page .services-section .service-card p,
+[data-theme="light"] .services-page .services-section .service-card p {
+    color: #202024;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    [data-theme="light"] .services-page .hero .hero-content h1 {
+        font-size: clamp(2.5rem, 10vw, 3.25rem);
+        margin-bottom: 1rem;
+    }
+
+    [data-theme="light"] .services-page .hero .hero-description {
+        max-width: 32ch;
+        font-size: 1.0625rem;
+        line-height: 1.55;
+    }
+
+    [data-theme="light"] .home-page .services-section .section-header {
+        margin-bottom: 2.25rem;
+    }
+
+    [data-theme="light"] .home-page .services-section .section-header h2 {
+        font-size: clamp(1.875rem, 8vw, 2.25rem);
+        line-height: 1.12;
+    }
+
+    [data-theme="light"] .home-page .services-section .section-header > p {
+        font-size: 1.0625rem;
+        line-height: 1.6;
+    }
+
+    [data-theme="light"] .home-page .services-section .service-card h3,
+    [data-theme="light"] .services-page .services-section .service-card h3 {
+        font-size: 1.3125rem;
+    }
+
+    [data-theme="light"] .home-page .services-section .service-card p,
+    [data-theme="light"] .services-page .services-section .service-card p {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
 }

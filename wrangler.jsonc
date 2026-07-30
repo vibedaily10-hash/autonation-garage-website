@@ -1,0 +1,8 @@
+{
+  "name": "autonation-garage-website",
+  "compatibility_date": "2026-07-30",
+  "preview_urls": true,
+  "assets": {
+    "directory": "."
+  }
+}
